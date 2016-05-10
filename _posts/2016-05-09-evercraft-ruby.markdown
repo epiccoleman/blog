@@ -2,7 +2,7 @@
 layout: post
 title:  "Evercraft Kata - Ruby"
 date:   2016-05-09 20:00:00 -0400
-categories: blog ruby kata
+categories: posts 
 ---
 
 Alright, here we go. This is the first post of my blog, but I promised myself
@@ -146,10 +146,10 @@ having to write out every number to do it. I'd be interested to hear anyone's
 thoughts about how to make something like this logically rigorous, or why that's
 silly or impossible or a bad idea. 
 
-The last features I'd like to talk about are damage and attacking. These
+OK, rambling over. The last features I'd like to talk about are damage and attacking. These
 required a bit more thought than the others. In the kata, attacking is listed as
 a feature before damage, and works like this: if the roll passed into the attack
-function beats the enemy's armor class, the attack is successful. That's three
+function beats the enemy's armor class, the attack is successful. A successful attack does 1 damage. That's three
 concepts tied together - damage, attacking, and success/failure of attacks. I couldn't figure out how to drive in attacks
 without having a method to damage a character. So I wrote a test for the ability
 of a character to take damage:
@@ -244,21 +244,27 @@ of doing at least a commit to some repo or another daily, and this was a good
 start to that. 
 
 This post has gotten lengthier than I meant it to be, so I want to cut it off
-here. I've officially earned myself the right to write an introduction post, so
-keep an eye out for that. I have a lot of ideas for future articles, and will be working
+here. I've officially earned myself the right to write an introduction post, though, so
+look out for that. I have a lot of ideas for future articles, and will be working
 with a couple of other people so that all of us can have kickass blogs in time.
+
 Just as a teaser, here are some of the things I'm planning on talking about in
 the near future:
+
 * This same kata in Clojure, and maybe Swift
 * Details about my personal code writin' setup (all the hipster tools)
 * Overtone (which I've done a few
   [talks](https://github.com/epiccoleman/pillarcon-overtone-lightning-talk)
-[about](https://github.com/epiccoleman/overtone-columbus-clojure) 
+[about](https://github.com/epiccoleman/overtone-columbus-clojure))
 * bash, boxen, jenkins, docker, and other DevOps-y type stuff 
 * stuff I'm trying to do to get better at being a programmer
-* stuff I'm trying to do to get better at being an adult.o
+* stuff I'm trying to do to get better at being an adult
 
 If you like, follow me on
 [Twitter](https://twitter.com/EpicColeman). I'm not a particularly exciting
-social media user, but I plan to at least tweet whenever I write a blog post.
+social media user, but I plan to at least tweet whenever I write a blog post. 
+Also, any critique of the code or the writing would be welcome. I'm planning on setting 
+up comments on this blog soon, but for now, feel free to email constructive criticism
+to ecoleman@pillartechnology.com.
+
 Stay tuned, and thanks for reading.
