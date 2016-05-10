@@ -21,7 +21,7 @@ if you're interested in reading - or, even better, reviewing - my code.
 I've done a little bit of Ruby here and there, but hadn't really dived
 in until recently. The tooling took a little bit of getting used to. I've been
 doing the majority of my at-home hacking around on a xubuntu 15.10 vm, and this
-didn't have any ruby installed on it yet. From my Googling around, `rvm` seemd
+didn't have any ruby installed on it yet. From my Googling around, `rvm` seemed
 like the way to go, so I got myself set up with that. I knew that Pillar (the
 company I work for) had some template projects on their site, so I cloned the
 [Ruby skeleton](https://github.com/PillarTechnology/ruby-skeleton) project. I
@@ -110,7 +110,7 @@ end
 
 You can see that I was taking a few liberties with "Only write the necessary
 code to make the test pass." I fixed the lack of a test for the capitalization
-of the input to the setter in the next commit, but the test didn't really feel
+of the input to the setter in the next commit, but the real problem was that test didn't really feel
 like it necessitated the 3 valid alignments. Here's the test I ended up using: 
 
 {% highlight ruby %}
@@ -124,7 +124,7 @@ like it necessitated the 3 valid alignments. Here's the test I ended up using:
 {% endhighlight %}
 ([commit](https://github.com/epiccoleman/evercraft-ruby/commit/89d0d8f2ed61995490fcc4c3a8a1a230c7be68fe))
 
-I talked to a coworker (DJ), who agreed that this
+I talked to a coworker ([DJ](https://twitter.com/ddaugher)), who agreed that this
 style was better - the phrase he used was "executable documentation," which is
 one of the things I like best about TDD. I do have a slight sticking point with
 this kind of test though - I don't feel it _fully_ characterizes the _possible_
@@ -140,8 +140,7 @@ logic standpoint, it's incomplete.
 Is there a way to write a test condition such
 that it only can pass "if these three values are the only valid values?", short
 of enumerating every possbile invalid value? I'm thinking
-back to proofs by math induction, which lets you  
-demonstrate that a proposition holds for all values, without 
+back to proofs by math induction, which lets you demonstrate that a proposition holds for all values, without 
 having to write out every number to do it. I'd be interested to hear anyone's
 thoughts about how to make something like this logically rigorous, or why that's
 silly or impossible or a bad idea. 
