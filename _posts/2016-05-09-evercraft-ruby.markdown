@@ -1,8 +1,11 @@
 ---
 layout: post
+comments: true
 title:  "Evercraft Kata - Ruby"
 date:   2016-05-09 20:00:00 -0400
 categories: posts 
+tags: [ ruby tdd kata ] 
+disqus_id: dd13d1e1-76ca-405e-a991-325592794786
 ---
 
 Alright, here we go. This is the first post of my blog, but I promised myself
