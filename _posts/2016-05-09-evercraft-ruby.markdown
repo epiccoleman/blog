@@ -1,8 +1,12 @@
 ---
 layout: post
+comments: true
 title:  "Evercraft Kata - Ruby"
 date:   2016-05-09 20:00:00 -0400
 categories: posts 
+tags: [ruby tdd kata]
+
+disqus_id: 26d0f2bc-7f3d-4fe2-a38c-8a7b82f67c9d
 ---
 
 Alright, here we go. This is the first post of my blog, but I promised myself
@@ -267,3 +271,7 @@ up comments on this blog soon, but for now, feel free to email constructive crit
 to [ecoleman@pillartechnology.com](mailto:ecoleman@pillartechnology.com)
 
 Stay tuned, and thanks for reading.
+
+{% if page.comments %}
+{% include disqus_comments.html url=page.url id=page.disqus_id %}
+{% endif %}
