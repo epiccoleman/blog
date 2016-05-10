@@ -271,7 +271,6 @@ up comments on this blog soon, but for now, feel free to email constructive crit
 to [ecoleman@pillartechnology.com](mailto:ecoleman@pillartechnology.com)
 
 Stay tuned, and thanks for reading.
-
 {% if page.comments %}
-{% include disqus_comments.html url=page.url id=page.disqus_id %}
+    {% include disqus_comments.html url=page.url id=page.disqus_id %}
 {% endif %}
