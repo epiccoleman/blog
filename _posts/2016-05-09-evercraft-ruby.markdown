@@ -265,6 +265,6 @@ If you like, follow me on
 social media user, but I plan to at least tweet whenever I write a blog post. 
 Also, any critique of the code or the writing would be welcome. I'm planning on setting 
 up comments on this blog soon, but for now, feel free to email constructive criticism
-to ecoleman@pillartechnology.com.
+to [ecoleman@pillartechnology.com](mailto:ecoleman@pillartechnology.com)
 
 Stay tuned, and thanks for reading.
