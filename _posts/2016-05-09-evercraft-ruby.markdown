@@ -3,6 +3,7 @@ layout: post
 title:  "Evercraft Kata - Ruby"
 date:   2016-05-09 20:00:00 -0400
 categories: posts 
+tags: [ kata tdd ruby ]
 ---
 
 Alright, here we go. This is the first post of my blog, but I promised myself
