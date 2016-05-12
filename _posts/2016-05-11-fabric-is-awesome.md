@@ -71,3 +71,33 @@ command in it and executes it on the machine Fabric is running on. `remote()` is
 the same, but it executes the command you pass in on every server in
 `env.hosts`. 
 
+Wait, let me repeat that - `remote()` takes a shell command in a string and
+executes it on a list of servers. That's awesome. And while I'm sure a lot of
+people reading this already have that ability through one piece of software or
+another, _I_ didn't until today. The best part is that the tool is ridiculously
+simple to use and it does its work over ssh - which means I didn't have to
+install it on any machines, didn't have to add anything to the config scripts,
+nothing. This is the kind of tool that gets me excited, and gets added to my
+mental toolbelt immediately. It's incredibly easy to use - I was up an running
+nearly immediately. In fact, even accounting for the time I spent Googling,
+reading about it, and learning to use it, using Fabric _still_ took me less time
+than it would have to do it manually. 
+
+This is the entirety of the code (well, not exactly _the_ code, but a contrived
+version for this post): 
+
+{% highlight python %}
+# fabfile.py
+
+__future__ import with_statement
+from fabric.api import local, remote
+
+with open("hosts") as f:
+    env.hosts = f.readlines()
+
+def fix_gem():
+    remote("gem uninstall rmagick") 
+    remote("gem install rmagick")
+    
+{% endhighlight %}
+
