@@ -12,8 +12,8 @@ it. The tool in question is called [Fabric](http://www.fabfile.org/), and I was
 excited mostly because of how easy Fabric made it to fix my issue.
 
 For the last two or three months, I've been the main guy doing DevOps type work
-at my current client. Our team is kind of unique at the client in that we have
-our own network. As a result, we're responsible for our own infrastructure
+at my current client. Our team is kind of unique at the client in that, for various reasons,  we have
+our own network, which is _mostly_ separate from the main network. As a result, we're responsible for our own infrastructure
 and the configuration of the dev machines and build farm boxes for the room. Some people might think this is a pain in the ass. I think it's *awesome*. 
 
 
@@ -47,10 +47,9 @@ others. Great." Then, a more _familiar_ thought: "It would sure be nice if there
 was some way to run those commands on every machine in the room that didn't
 involve ssh'ing into every box."
 
-Today was the right day to have that thought, because I had some downtime
-waiting on some builds. I knew there were solutions for this
+I had some downtime waiting on some builds, so it was the right time for me to have that thought. I knew there were solutions for this
 problem out there, but I was pretty sure the ones I had already heard of were
-going to be more work to set up than I wanted. I _could_ have run those commands as part of the nightly configuration update, but then I would have had to wait until the next day for it to be fixed everywhere, and since I only would have had to do it once, I would have had to remember to take that code out of the config repo the next morning. Suboptimal.
+going to be more work to set up than I wanted. I _could_ have run those commands as part of the nightly configuration update, but then I would have had to wait until the next day for it to be fixed everywhere, and since I only needed to do it once, I would have had to remember to take that code out of the config repo the next morning. Suboptimal.
 
 So I Googled around, and found a Stack Overflow post where someone recommended Fabric. Here's the description, right from their website:
  
