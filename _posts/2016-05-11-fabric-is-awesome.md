@@ -6,21 +6,16 @@ categories: posts
 tags: [ devops fabric python ]
 ---
 
-Earlier today, I tweeted this:
-
-<!-- {% tweet https://twitter.com/EpicColeman/status/730448832031502336 %} -->
-
-
-I made this tweet because I had just used a new tool to solve a problem that's
+Earlier today, I made [this tweet](https://twitter.com/EpicColeman/status/730448832031502336)  because I had just used a new tool to solve a problem that's
 been a pain in my ass for a couple of months now, and I was pretty excited about
 it. The tool in question is called [Fabric](http://www.fabfile.org/), and I was
-excited mostly because of how easy Fabric made it to get done what I needed to
-do.
+excited mostly because of how easy Fabric made it to fix my issue.
 
 For the last two or three months, I've been the main guy doing DevOps type work
 at my current client. Our team is kind of unique at the client in that we have
 our own network. As a result, we're responsible for our own infrastructure
 and the configuration of the dev machines and build farm boxes for the room. Some people might think this is a pain in the ass. I think it's *awesome*. 
+
 
 Anyway, the problem that I ran into today was a simple one, with an easy fix. We
 have a suite of Appium tests that run against our app, and there's some code in
@@ -47,25 +42,29 @@ The dev got his test suite spinning away and thanked me. Simple problem, easy
 fix. DevOps guy to the rescue! 
  
 Of course, just as I was turning back to my computer, a realization hit me: "If
-this machine was misconfigured by the nightly update, then so are all the
+_his_ machine was misconfigured by the nightly update... then so are all the
 others. Great." Then, a more _familiar_ thought: "It would sure be nice if there
 was some way to run those commands on every machine in the room that didn't
 involve ssh'ing into every box."
 
 Today was the right day to have that thought, because I had some downtime
-waiting on various processes to complete. I knew there were solutions for this
+waiting on some builds. I knew there were solutions for this
 problem out there, but I was pretty sure the ones I had already heard of were
-going to be more work to set up than I wanted. So I Googled around, and found a
-Stack Overflow post where someone recommended Fabric.
+going to be more work to set up than I wanted. I _could_ have run those commands as part of the nightly configuration update, but then I would have had to wait until the next day for it to be fixed everywhere, and since I only would have had to do it once, I would have had to remember to take that code out of the config repo the next morning. Suboptimal.
 
-Here's the description, right from their website: 
+So I Googled around, and found a Stack Overflow post where someone recommended Fabric. Here's the description, right from their website:
+ 
 > Fabric is a Python (2.5-2.7) library and command-line tool for streamlining
 > the use of SSH for application deployment or systems administration tasks.
 
-I haven't used Python much, but this seemed awesome enough that I was willing to
-try it out. Fabric is dirt simple: Install it (I used pip), and define functions
-in `fabfile.py`. Run `fab ${function_name}` in the same directory, and Fabric
-executes that function. This is cool on its own, but Fabric's api also has two
+I haven't used Python much, but this seemed simple enough that I was willing to
+try it out. Fabric is dirt simple: 
+
+* Install it (I used `pip install fabric`),
+* define functions in `fabfile.py`. 
+* Run `fab ${function_name}` in the same directory, and Fabric executes that function.
+
+This is pretty cool on its own, but Fabric's real magic comes from two
 methods called `local()` and `remote()`. `local()` takes a string with a shell
 command in it and executes it on the machine Fabric is running on. `remote()` is
 the same, but it executes the command you pass in on every server in
@@ -80,7 +79,7 @@ install it on any machines, didn't have to add anything to the config scripts,
 nothing. 
 
 This is the kind of tool that gets me excited, and gets added to my
-mental toolbelt immediately. It's incredibly easy to use - I was up an running
+toolbelt immediately. It's incredibly easy to use - I was up and running
 nearly immediately. In fact, even accounting for the time I spent Googling,
 reading about it, and learning to use it, using Fabric _still_ took me less time
 than it would have to do it manually. 
@@ -116,12 +115,21 @@ writing scripts that are too complex for bash. If you're interested in it, go
 check out their [tutorial](http://docs.fabfile.org/en/1.11/tutorial.html) -
 reading this gave me all the information that I needed to get up and running.
 All in all, this feels like something that I'll continue to find useful for a
-long time, and I'm pretty excited about Fabric. Maybe I'll do that kata in
-Python next...
+long time, and I'm pretty excited about Fabric. 
+
+As cool as Fabric is, it's worth mentioning that even in my minimal example
+there are some caveats. First, my `hosts` file is a mix of hostnames and IPs. 
+The reason for this is that the only machines whose IPs are mapped to hostnames 
+in `/etc/hosts` are our CI boxes, which are the only machines with static IPs. 
+This is fine, but since the IPs on the dev workstations can change (they don't
+much, but they _can_), my list isn't set in stone. In fact, I ran into this that same day - after copying a list of the IPs that I had and running my command, I got a timeout from an ip that was no longer pointing to anything. That pointed out another
+problem: by default, Fabric just errors out whenever it encounters a non-zero exit code, which means that if you hit an error halfway down the list, you'll have to go fix your hosts file and try again.
+
+These two problems are pretty easy to solve - respectively, set up static ips, and handle the
+failure exception from Fabric. I won't get into that here, but it's worth noting. 
+Either way, Fabric is pretty damn cool.
 
 I'm planning on getting Disqus comments up and running shortly, and will probably 
 do a blog post about setting up this blog in the near future. I've also got 
 another kata post in the works, and am planning a post about my dev system's
-configuration. 
-
- 
+configuration. Stay tuned for all that and more, and thanks for reading.
