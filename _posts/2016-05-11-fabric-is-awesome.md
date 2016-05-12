@@ -77,7 +77,9 @@ people reading this already have that ability through one piece of software or
 another, _I_ didn't until today. The best part is that the tool is ridiculously
 simple to use and it does its work over ssh - which means I didn't have to
 install it on any machines, didn't have to add anything to the config scripts,
-nothing. This is the kind of tool that gets me excited, and gets added to my
+nothing. 
+
+This is the kind of tool that gets me excited, and gets added to my
 mental toolbelt immediately. It's incredibly easy to use - I was up an running
 nearly immediately. In fact, even accounting for the time I spent Googling,
 reading about it, and learning to use it, using Fabric _still_ took me less time
@@ -101,3 +103,25 @@ def fix_gem():
     
 {% endhighlight %}
 
+That's it. You run `fab fix_gem` and it just happily spins off, connecting to
+each of the servers in env.hosts and running the commands on them. I read in the
+server list from a file in the directory, which just has hostnames on each line.
+I wouldn't be surprised if there's something built in to Fabric to make that
+easier, but even so - it's 5 lines of code. 
+
+For something so useful, that's pretty awesome. Plus, Fabric is loaded with
+features, probably far beyond what I'll ever use. Python is a great language for
+this kind of thing - I'll definitely be thinking about it in the future when I'm
+writing scripts that are too complex for bash. If you're interested in it, go
+check out their [tutorial](http://docs.fabfile.org/en/1.11/tutorial.html) -
+reading this gave me all the information that I needed to get up and running.
+All in all, this feels like something that I'll continue to find useful for a
+long time, and I'm pretty excited about Fabric. Maybe I'll do that kata in
+Python next...
+
+I'm planning on getting Disqus comments up and running shortly, and will probably 
+do a blog post about setting up this blog in the near future. I've also got 
+another kata post in the works, and am planning a post about my dev system's
+configuration. 
+
+ 
