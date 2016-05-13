@@ -3,6 +3,7 @@ layout: post
 title:  "Fabric is Awesome"
 date:   2016-05-11 20:00:00 -0400
 categories: posts 
+disqus_id: 094F53C2-045A-44CF-96E5-7EEE3DF2C6E3
 tags: [ devops fabric python ]
 ---
 
