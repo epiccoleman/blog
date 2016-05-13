@@ -129,7 +129,7 @@ These two problems are pretty easy to solve - respectively, set up static ips, a
 failure exception from Fabric. I won't get into that here, but it's worth noting. 
 Either way, Fabric is pretty damn cool.
 
-I'm planning on getting Disqus comments up and running shortly, and will probably 
+I'm planning on getting Disqus comments up and running shortly (edit 5/13 - comments are up and running, yay!), and will probably 
 do a blog post about setting up this blog in the near future. I've also got 
 another kata post in the works, and am planning a post about my dev system's
 configuration. Stay tuned for all that and more, and thanks for reading.
