@@ -3,6 +3,7 @@ layout: post
 title:  "Evercraft Kata - Ruby"
 date:   2016-05-09 20:00:00 -0400
 categories: posts 
+disqus_id: 4b9f4b51-d64e-4ad1-9639-d9d2bbd80009
 tags: [ kata tdd ruby ]
 ---
 
